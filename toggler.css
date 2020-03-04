@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  width: 100%;
+  height: 100px;
+  background: rgb(4, 53, 68);
+  color: aliceblue;
+}
+
+header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 100px;
+}
+
+/* Common styles */
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/*  Humburger Menu toggler */
+section.toggler {
+  width: 100%;
+  height: 200px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.toggler .btn {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+section.toggler .btn input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+section.toggler .btn div.top {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #333333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+section.toggler .btn div.middle {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #333333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+
+section.toggler .btn div.bottom {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #333333;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Change state on click by monitoring the checkbox check state */
+
+section.toggler .btn input:checked ~ div.top {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transform: rotate(45deg);
+}
+
+section.toggler .btn input:checked ~ div.middle {
+  transform: rotate(-45deg);
+}
+
+/* Make the bottom bar disappear */
+section.toggler .btn input:checked ~ div.bottom {
+  opacity: 0;
+}
+
+/* Wavy btn */
+
+section.toggler .wavy-btn {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+}
+
+section.toggler .wavy-btn input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+section.toggler .wavy-btn div.top {
+  width: 100%;
+  height: 4px;
+  border-radius: 3px;
+  background: #333333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+section.toggler .wavy-btn div.middle {
+  width: 60%;
+  height: 4px;
+  border-radius: 2px;
+  background: #889999;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+
+section.toggler .wavy-btn div.bottom {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #333333;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Switch the sides of the middle bar */
+section.toggler .wavy-btn input:checked ~ div.middle {
+  left: 10px;
+
+  background: #333;
+}
+
+/* Switch */
+
+section.toggler .switch {
+  width: 80px;
+  height: 30px;
+  /* background: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+section.toggler .switch .switch-container {
+  width: 80%;
+  height: 25px;
+  position: relative;
+  border: 2px #333 solid;
+  border-radius: 13px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.toggler .switch-container input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+}
+
+section.toggler .switch .switch-container .switch-toggler {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #333;
+  border-radius: 13px;
+  background: aliceblue;
+  position: absolute;
+  left: -1px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Toggle the switch */
+section.toggler .switch-container input:checked ~ .switch-toggler {
+  left: 36px;
+  background: #333;
+  border-color: rgb(48, 52, 54);
+}
